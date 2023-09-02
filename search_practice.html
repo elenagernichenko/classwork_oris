@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Поиск</title>
 </head>
 <body>
 <h1>Поиск</h1>
+
 <form action="https://nova.rambler.ru/search" method="get">
     <label for="search">Rambler:</label>
     <input type="text" id="search" name="query" placeholder="Введите запрос" style="font-family: Arial; text-align: center;">
-    <button type="submit">Найти</button>
+    <button type="submit"><b>Найти</b></button>
+    <p><i>Поиск в Rambler</i></p>
 </form>
 
 <form action="https://www.google.com/search" method="get">
     <label for="googleSearch">Google:</label>
     <input type="text" id="googleSearch" name="q" placeholder="Поиск в Google" style="font-family: Times New Roman; text-align: left;">
-    <button type="submit">Поиск</button>
+    <button type="submit"><em>Поиск</em></button>
+    <p><strong>Поиск в Google</strong></p>
 </form>
 
 <form action="https://www.bing.com/search" method="get">
     <label for="bingSearch">Bing:</label>
     <input type="text" id="bingSearch" name="q" placeholder="Поиск в Bing" style="font-family: Verdana; text-align: right;">
-    <button type="submit">Поиск</button>
+    <button type="submit"><u>Поиск</u></button>
+    <p>Поиск в <i>Bing</i></p>
 </form>
 
 <form action="https://search.yahoo.com/search" method="get">
     <label for="yahooSearch">Yahoo:</label>
     <input type="text" id="yahooSearch" name="p" placeholder="Поиск в Yahoo" style="font-family: Georgia; text-align: center;">
-    <button type="submit">Поиск</button>
+    <button type="submit"><strong>Поиск</strong></button>
+    <p><em>Поиск в Yahoo</em></p>
 </form>
+
+
 
 <form action="https://duckduckgo.com/" method="get">
     <label for="duckduckgoSearch">DuckDuckGo:</label>
