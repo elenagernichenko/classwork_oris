@@ -4,18 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" />
+    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="added auth and register implementation">
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +61,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Users/79030/Desktop/орис/classwork_oris/webapp/src/main",
-    "list.type.of.created.stylesheet": "CSS"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/79030/Desktop/орис/classwork_oris/webapp/src/main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\79030\Desktop\орис\classwork_oris\webapp\src\main" />
@@ -162,8 +170,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695935474425</updated>
-      <workItem from="1695935475913" duration="1171000" />
+      <workItem from="1695935475913" duration="2891000" />
+      <workItem from="1696087530372" duration="1205000" />
     </task>
+    <task id="LOCAL-00001" summary="added auth and register implementation">
+      <created>1695936744013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695936744013</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,5 +196,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added auth and register implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added auth and register implementation" />
   </component>
 </project>
