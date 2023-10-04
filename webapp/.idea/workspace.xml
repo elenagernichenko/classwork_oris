@@ -5,25 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="added auth and register implementation">
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hw2/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/auth_reg/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth_reg/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UsersRepositoryJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UsersRepositoryJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/UsersRepositoryJdbcImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/untitled.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepositoryJdbcImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +67,13 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/79030/Desktop/орис/classwork_oris/webapp/src/main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/79030/Desktop/орис/classwork_oris/webapp&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -172,6 +177,9 @@
       <updated>1695935474425</updated>
       <workItem from="1695935475913" duration="2891000" />
       <workItem from="1696087530372" duration="1205000" />
+      <workItem from="1696281931999" duration="635000" />
+      <workItem from="1696285521359" duration="3755000" />
+      <workItem from="1696289318073" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="added auth and register implementation">
       <created>1695936744013</created>

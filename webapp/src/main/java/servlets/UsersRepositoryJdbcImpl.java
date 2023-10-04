@@ -59,6 +59,23 @@ public class UsersRepositoryJdbcImpl implements UsersRepository {
 
     @Override
     public Optional<User> findByLogin(User login) {
+        try {
+            String username = login.getUsername();
+            String password = login.getPassword();
+
+            String sql = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                User user = User.builder()
+                        .id(resultSet.getLong("id"))
+                        .build();
+                return Optional.of(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return Optional.empty();
     }
 

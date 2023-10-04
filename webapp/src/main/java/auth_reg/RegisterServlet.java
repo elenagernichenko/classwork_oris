@@ -35,39 +35,45 @@ public class RegisterServlet extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/html/register.html").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);) {
-            Statement statement = connection.createStatement();
-            String result;
-            String status;
+        String result;
+        String status;
 
-            if (usersRepository.findUserByEmail(email)) {
-                result = "user " + username + " is already exist with this email";
-                status = "registration failed";
-            } else {
-                if (!password.isEmpty() && !username.isEmpty() && !email.isEmpty()) {
-                    String sql = "insert into users(username, email, password)" +
-                            " values ('" + username + "', '" + email + "', '" + password + "');";
+        if (usersRepository.findUserByEmail(email)) {
+            result = "User " + username + " already exists with this email";
+            status = "registration failed";
+        } else {
+            if (!password.isEmpty() && !username.isEmpty() && !email.isEmpty()) {
+                try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                     Statement statement = connection.createStatement()) {
+                    String sql = "INSERT INTO users(username, email, password) VALUES ('" + username + "', '" + email + "', '" + password + "');";
                     statement.executeUpdate(sql);
 
-                    result = "you are registered! Good luck, " + username;
+                    result = "You are registered! Good luck, " + username;
                     status = "registration completed";
-                } else {
-                    result = "eser is not registered";
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    result = "User registration failed";
                     status = "registration failed";
                 }
+            } else {
+                result = "User is not registered. Please fill in all fields.";
+                status = "registration failed";
             }
-
-            request.setAttribute("resultOfAuth", result);
-            request.setAttribute("status", status);
-            request.getRequestDispatcher("/jsp/result.jsp").forward(request, response);
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
         }
+
+        request.setAttribute("resultOfAuth", result);
+        request.setAttribute("status", status);
+        request.getRequestDispatcher("/jsp/result.jsp").forward(request, response);
     }
 }

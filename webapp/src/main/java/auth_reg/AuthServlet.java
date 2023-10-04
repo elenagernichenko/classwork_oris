@@ -1,18 +1,19 @@
 package auth_reg;
 
+import models.User;
 import servlets.UsersRepository;
 import servlets.UsersRepositoryJdbcImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Optional;
+import java.util.UUID;
 
 @WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
@@ -38,18 +39,64 @@ public class AuthServlet extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("session_uuid")) {
+                    String uuidString = cookie.getValue();
+                    UUID uuid = UUID.fromString(uuidString);
+
+                    try {
+                        Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                        PreparedStatement statement = connection.prepareStatement("SELECT user_id FROM session_data WHERE uuid = ?");
+                        statement.setObject(1, uuid);
+                        ResultSet resultSet = statement.executeQuery();
+
+                        if (resultSet.next()) {
+                            response.sendRedirect("users");
+                            return;
+                        }
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+        request.getRequestDispatcher("/html/auth.html").forward(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        Optional<User> user = usersRepository.findByLogin(User.builder()
+                .username(username)
+                .password(password)
+                .build());
+
         String result;
         String status;
 
-        if (usersRepository.findUser(username, password)) {
+        if (user.isPresent()) {
+            UUID uuid = UUID.randomUUID();
+            Cookie cookie = new Cookie("session_uuid", uuid.toString());
+            response.addCookie(cookie);
+
+            try {
+                Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                PreparedStatement statement = connection.prepareStatement("INSERT INTO session_data (user_id, uuid) VALUES (?, ?)");
+                statement.setLong(1, user.get().getId());
+                statement.setObject(2, uuid);
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             result = username + ", you have successfully logged in to your account";
             status = "login in successfully";
         } else {
-            result = "user " + username + " not found. try again !";
+            result = "user " + username + " not found. try again!";
             status = "login failed :(";
         }
         request.setAttribute("resultOfAuth", result);
