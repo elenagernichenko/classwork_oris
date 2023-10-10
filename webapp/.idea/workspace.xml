@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="added session implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3bb8234-eecd-4da5-a14d-0626f88b5cf2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3bb8234-eecd-4da5-a14d-0626f88b5cf2.xml" afterDir="false" />
+    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="set up directories; created CookiesRepository and implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/CookiesRepositoryJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/CookiesRepositoryJdbcImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/AuthServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/CrudRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/UsersRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlets/UsersServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/UsersServlets.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/untitled.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/CrudRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersServlets.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersServlets.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +177,7 @@
       <workItem from="1696289318073" duration="315000" />
       <workItem from="1696402839989" duration="5559000" />
       <workItem from="1696958779118" duration="2394000" />
-      <workItem from="1696965504182" duration="2332000" />
+      <workItem from="1696965504182" duration="5240000" />
     </task>
     <task id="LOCAL-00001" summary="added auth and register implementation">
       <created>1695936744013</created>
@@ -185,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696403036267</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="set up directories; created CookiesRepository and implementation">
+      <created>1696968316253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696968316253</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +220,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added auth and register implementation" />
     <MESSAGE value="added session implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added session implementation" />
+    <MESSAGE value="set up directories; created CookiesRepository and implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="set up directories; created CookiesRepository and implementation" />
   </component>
 </project>

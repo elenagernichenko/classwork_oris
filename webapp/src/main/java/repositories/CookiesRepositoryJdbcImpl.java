@@ -1,17 +1,16 @@
 package repositories;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.UUID;
 
 public class CookiesRepositoryJdbcImpl implements CookiesRepository {
 
     private final Connection connection;
+    private final Statement statement;
 
-    public CookiesRepositoryJdbcImpl(Connection connection) {
+    public CookiesRepositoryJdbcImpl(Connection connection, Statement statement) {
         this.connection = connection;
+        this.statement = statement;
     }
 
     @Override

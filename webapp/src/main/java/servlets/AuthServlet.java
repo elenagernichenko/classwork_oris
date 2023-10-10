@@ -36,7 +36,7 @@ public class AuthServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             Statement statement = connection.createStatement();
             usersRepository = new UsersRepositoryJdbcImpl(connection, statement);
-            cookiesRepository = new CookiesRepositoryJdbcImpl(connection);
+            cookiesRepository = new CookiesRepositoryJdbcImpl(connection, statement);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
