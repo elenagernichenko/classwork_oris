@@ -4,26 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="added auth and register implementation">
+    <list default="true" id="a5915912-a646-47b1-91bc-3514afb25891" name="Changes" comment="added session implementation">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3bb8234-eecd-4da5-a14d-0626f88b5cf2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3bb8234-eecd-4da5-a14d-0626f88b5cf2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth_reg/AuthServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/auth_reg/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/auth_reg/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/UsersRepositoryJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/UsersRepositoryJdbcImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/AuthServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/auth_reg/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlets/UsersRepositoryJdbcImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/untitled.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/AuthServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/auth_reg/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User$UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepositoryJdbcImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/WEB-INF/classes/servlets/UsersRepositoryJdbcImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/untitled/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/untitled/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,10 +19,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,7 +54,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/79030/Desktop/орис/classwork_oris/webapp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/79030/Desktop/орис/classwork_oris&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -180,6 +167,9 @@
       <workItem from="1696281931999" duration="635000" />
       <workItem from="1696285521359" duration="3755000" />
       <workItem from="1696289318073" duration="315000" />
+      <workItem from="1696402839989" duration="5559000" />
+      <workItem from="1696958779118" duration="2394000" />
+      <workItem from="1696965504182" duration="2332000" />
     </task>
     <task id="LOCAL-00001" summary="added auth and register implementation">
       <created>1695936744013</created>
@@ -188,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695936744013</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added session implementation">
+      <created>1696403036267</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696403036267</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +204,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added auth and register implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added auth and register implementation" />
+    <MESSAGE value="added session implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added session implementation" />
   </component>
 </project>

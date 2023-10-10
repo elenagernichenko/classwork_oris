@@ -1,8 +1,10 @@
-package auth_reg;
+package servlets;
 
 import models.User;
-import servlets.UsersRepository;
-import servlets.UsersRepositoryJdbcImpl;
+import repositories.CookiesRepository;
+import repositories.CookiesRepositoryJdbcImpl;
+import repositories.UsersRepository;
+import repositories.UsersRepositoryJdbcImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,6 +23,7 @@ public class AuthServlet extends HttpServlet {
     private static final String DB_PASSWORD = "5058";
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/servlets_db";
     private UsersRepository usersRepository;
+    private CookiesRepository cookiesRepository;
 
     @Override
     public void init() throws ServletException {
@@ -33,6 +36,7 @@ public class AuthServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             Statement statement = connection.createStatement();
             usersRepository = new UsersRepositoryJdbcImpl(connection, statement);
+            cookiesRepository = new CookiesRepositoryJdbcImpl(connection);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -47,18 +51,9 @@ public class AuthServlet extends HttpServlet {
                     String uuidString = cookie.getValue();
                     UUID uuid = UUID.fromString(uuidString);
 
-                    try {
-                        Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-                        PreparedStatement statement = connection.prepareStatement("SELECT user_id FROM session_data WHERE uuid = ?");
-                        statement.setObject(1, uuid);
-                        ResultSet resultSet = statement.executeQuery();
-
-                        if (resultSet.next()) {
-                            response.sendRedirect("users");
-                            return;
-                        }
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
+                    if (cookiesRepository.findSession(uuid)) {
+                        response.sendRedirect("users");
+                        return;
                     }
                 }
             }
@@ -84,15 +79,8 @@ public class AuthServlet extends HttpServlet {
             Cookie cookie = new Cookie("session_uuid", uuid.toString());
             response.addCookie(cookie);
 
-            try {
-                Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-                PreparedStatement statement = connection.prepareStatement("INSERT INTO session_data (user_id, uuid) VALUES (?, ?)");
-                statement.setLong(1, user.get().getId());
-                statement.setObject(2, uuid);
-                statement.executeUpdate();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            cookiesRepository.saveSession(uuid, user.get().getId());
+
             result = username + ", you have successfully logged in to your account";
             status = "login in successfully";
         } else {

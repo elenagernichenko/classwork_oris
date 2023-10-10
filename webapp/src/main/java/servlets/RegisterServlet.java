@@ -1,7 +1,7 @@
-package auth_reg;
+package servlets;
 
-import servlets.UsersRepository;
-import servlets.UsersRepositoryJdbcImpl;
+import repositories.UsersRepository;
+import repositories.UsersRepositoryJdbcImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
